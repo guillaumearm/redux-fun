@@ -13,7 +13,7 @@ $ npm install --save redux-fun
 #### Convert updaters
 ```js
 const { toReducer } = require('redux-fun')
-const updater = (state) => (action) => state;
+const updater = (action) => state => state;
 const reducer = toReducer(updater);
 ```
 
