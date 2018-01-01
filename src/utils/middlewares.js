@@ -28,11 +28,20 @@ const preserveAsyncFlow = (actionType = []) => () => (next) => {
         return await scheduler(action);
       }
       dispatching = true;
-      const nexted = await next(action);
+      let nexted;
+      let error;
+      try {
+        nexted = await next(action);
+      } catch (e) {
+        error = e;
+      }
       dispatching = false;
       const nextAction = queue.shift();
       if (nextAction) {
         nextAction.resume();
+      }
+      if (error) {
+        throw error;
       }
       return nexted;
     }
