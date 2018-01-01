@@ -38,6 +38,7 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
+    "lodash.curry": "^4.1.1",
     "lodash.mapvalues": "^4.6.0"
   },
   "engines": {

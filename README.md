@@ -3,21 +3,18 @@ redux-fun
 
 Redux functional programming utilities
 
-### Install
+## Install
 ```bash
 $ npm install --save redux-fun
 ```
 
-### Documentation
+## Documentation
 
-#### Convert updaters
-```js
-const { toReducer } = require('redux-fun')
-const updater = (action) => state => state;
-const reducer = toReducer(updater);
-```
 
-#### Compose reducers
+### Reducers
+----------------------
+
+##### Compose reducers
 ```js
   const { composeReducers, pipeReducers } = require('redux-fun')
 
@@ -25,7 +22,30 @@ const reducer = toReducer(updater);
   const reducer_2 = pipeReducers(r1, r2, r3);
 ```
 
-#### Compose middlewares
+##### Convert updaters
+```js
+const { toReducer } = require('redux-fun')
+const updater = (action) => state => state;
+const reducer = toReducer(updater);
+```
+
+### Updaters
+----------------------
+##### updater with initial state
+```js
+const { withDefaultState } = require('redux-fun');
+
+// normal
+const updater_1 = withDefaultState({}, action => state => state)
+
+// curried
+const updater_2 = withDefaultState({})(action => state => state)
+```
+
+### Middlewares
+----------------------
+
+##### Compose middlewares
 ```js
   const { composeMiddlewares, pipeMiddlewares } = require('redux-fun')
 
@@ -33,7 +53,10 @@ const reducer = toReducer(updater);
   const middleware_2 = pipeMiddlewares(m1, m2, m3);
 ```
 
-#### Bind selectors
+### Selectors
+----------------------
+
+##### Bind selectors
 
 ```js
   const { bindSelectors } = require('redux-fun')
