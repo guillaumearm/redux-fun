@@ -16,15 +16,15 @@ $ npm install --save redux-fun
 
 ##### Compose reducers
 ```js
-  const { composeReducers, pipeReducers } = require('redux-fun')
+  const { composeReducers, pipeReducers } = require('redux-fun');
 
-  const reducer_1 = composeReducers(r3, r2, r1)
+  const reducer_1 = composeReducers(r3, r2, r1);
   const reducer_2 = pipeReducers(r1, r2, r3);
 ```
 
 ##### Convert updaters
 ```js
-const { toReducer } = require('redux-fun')
+const { toReducer } = require('redux-fun');
 const updater = (action) => state => state;
 const reducer = toReducer(updater);
 ```
@@ -36,10 +36,10 @@ const reducer = toReducer(updater);
 const { withDefaultState } = require('redux-fun');
 
 // normal
-const updater_1 = withDefaultState({}, action => state => state)
+const updater_1 = withDefaultState({}, action => state => state);
 
 // curried
-const updater_2 = withDefaultState({})(action => state => state)
+const updater_2 = withDefaultState({})(action => state => state);
 ```
 
 ### Middlewares
@@ -47,9 +47,9 @@ const updater_2 = withDefaultState({})(action => state => state)
 
 ##### Compose middlewares
 ```js
-  const { composeMiddlewares, pipeMiddlewares } = require('redux-fun')
+  const { composeMiddlewares, pipeMiddlewares } = require('redux-fun');
 
-  const middleware_1 = composeMiddl(m3, m2, m1)
+  const middleware_1 = composeMiddl(m3, m2, m1);
   const middleware_2 = pipeMiddlewares(m1, m2, m3);
 ```
 
@@ -59,13 +59,13 @@ const updater_2 = withDefaultState({})(action => state => state)
 ##### Bind selectors
 
 ```js
-  const { bindSelectors } = require('redux-fun')
+  const { bindSelectors } = require('redux-fun');
 
   const selectors = {
     getUsers: (state) => state.users,
-    getUser: (state, { id }) => state.users[id]
+    getUser: (state, { id }) => state.users[id],
   }
 
-  const boundSelectors = bindSelectors(selectors, store.getState)
-  const user = boundSelectors.getUser({ id: 1 })
+  const boundSelectors = bindSelectors(selectors, store.getState);
+  const user = boundSelectors.getUser({ id: 1 });
 ```
