@@ -15,7 +15,33 @@ const pipeMiddlewares = (...middlewares) => {
 
 const composeMiddlewares = (...middlewares) => pipeMiddlewares(...middlewares.reverse())
 
+const preserveAsyncFlow = (actionType = []) => () => (next) => {
+  const actionsTypes = typeof actionType === 'string' ? [actionType] : actionType;
+  const queue = [];
+  let dispatching = false;
+  return async function scheduler(action) {
+    if (actionsTypes.find(type => type === action.type)) {
+      if (dispatching) {
+        await new Promise(resolve => {
+          queue.push({ resume: resolve })
+        })
+        return await scheduler(action);
+      }
+      dispatching = true;
+      const nexted = await next(action);
+      dispatching = false;
+      const nextAction = queue.shift();
+      if (nextAction) {
+        nextAction.resume();
+      }
+      return nexted;
+    }
+    return await next(action);
+  }
+}
+
 module.exports = {
   pipeMiddlewares,
   composeMiddlewares,
+  preserveAsyncFlow,
 }

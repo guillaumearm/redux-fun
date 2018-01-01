@@ -53,6 +53,14 @@ const updater_2 = withDefaultState({})(action => state => state);
   const middleware_2 = pipeMiddlewares(m1, m2, m3);
 ```
 
+##### Preserve async flow
+Respect the dispatch order with async middleware
+```js
+  const { preserveAsyncFlow } = require('redux-fun');
+  const middleware_1 = preserveAsyncFlow('ACTION_TYPE')
+  const middleware_2 = preserveAsyncFlow(['ACTION_TYPE_1', 'ACTION_TYPE_2'])
+```
+
 ### Selectors
 ----------------------
 
