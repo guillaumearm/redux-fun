@@ -8,6 +8,7 @@
     "test": "npm run lint",
     "test:all": "npm run lint",
     "lint": "eslint .",
+    "prepublish": "npm run test",
     "precommit": "lint-staged",
     "lint-staged": "lint-staged"
   },
