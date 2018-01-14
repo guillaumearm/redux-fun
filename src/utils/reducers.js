@@ -10,8 +10,8 @@ const pipeReducers = (reducer, ...restReducers) => (state, action) => {
 
 const composeReducers = (...reducers) => pipeReducers(...reducers.reverse())
 
-const toReducer = (u, initialState) => (
-  (state = initialState, action) => (
+const toReducer = (u) => (
+  (state, action) => (
     u(action)(state)
   )
 )
