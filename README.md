@@ -59,9 +59,9 @@ Use preserveAsyncSeries instead
 ##### Preserve async series
 Respect the dispatch order with async middleware
 ```js
-  const { preserveAsyncFlow } = require('redux-fun');
-  const middleware_1 = preserveAsyncFlow('ACTION_TYPE')
-  const middleware_2 = preserveAsyncFlow(['ACTION_TYPE_1', 'ACTION_TYPE_2'])
+  const { preserveAsyncSeries } = require('redux-fun');
+  const middleware_1 = preserveAsyncSeries('ACTION_TYPE')
+  const middleware_2 = preserveAsyncSeries(['ACTION_TYPE_1', 'ACTION_TYPE_2'])
 ```
 
 ### Selectors
