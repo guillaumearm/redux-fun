@@ -8,16 +8,4 @@ const pipeReducers = (reducer, ...restReducers) => (state, action) => {
   return pipeReducers(...restReducers)(reducer(state, action), action)
 }
 
-const composeReducers = (...reducers) => pipeReducers(...reducers.reverse())
-
-const toReducer = (u) => (
-  (state, action) => (
-    u(action)(state)
-  )
-)
-
-module.exports = {
-  pipeReducers,
-  composeReducers,
-  toReducer,
-}
+module.exports = pipeReducers

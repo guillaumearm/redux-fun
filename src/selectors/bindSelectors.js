@@ -1,11 +1,7 @@
 const mapValues = require('lodash.mapvalues');
 
-const bindSelectors = (selectors, getState) => (
+module.exports = (selectors, getState) => (
   mapValues(selectors, (selector) => (
     (...args) => selector(getState(), ...args)
   ))
 )
-
-module.exports = {
-  bindSelectors,
-};

@@ -1,6 +1,6 @@
 module.exports = {
-  ...require('./utils/reducers'),
-  ...require('./utils/updaters'),
-  ...require('./utils/middlewares'),
-  ...require('./utils/selectors'),
+  ...require('./reducers'),
+  ...require('./updaters'),
+  ...require('./middlewares'),
+  ...require('./selectors'),
 }
