@@ -1,33 +1,7 @@
-module.exports = (actionType = []) => () => (next) => {
-  const actionsTypes = typeof actionType === 'string' ? [actionType] : actionType;
-  const queue = [];
-  let dispatching = false;
-  return async function scheduler(action) {
-    if (actionsTypes.find(type => type === action.type)) {
-      if (dispatching) {
-        await new Promise(resolve => {
-          queue.push({ resume: resolve })
-        })
-        return await scheduler(action);
-      }
-      dispatching = true;
-      let nexted;
-      let error;
-      try {
-        nexted = await next(action);
-      } catch (e) {
-        error = e;
-      }
-      dispatching = false;
-      const nextAction = queue.shift();
-      if (nextAction) {
-        nextAction.resume();
-      }
-      if (error) {
-        throw error;
-      }
-      return nexted;
-    }
-    return await next(action);
-  }
+const preserveAsyncSeries = require('./preserveAsyncSeries');
+
+module.exports = (actionTypes) => {
+  // eslint-disable-next-line no-console
+  console.warn('redux-fun : preserveAsyncFlow is deprecated, use preserveAsyncSeries instead');
+  return preserveAsyncSeries(actionTypes)
 }

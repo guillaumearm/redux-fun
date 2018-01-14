@@ -53,7 +53,10 @@ const updater_2 = withDefaultState({})(action => state => state);
   const middleware_2 = pipeMiddlewares(m1, m2, m3);
 ```
 
-##### Preserve async flow
+##### Preserve async flow (deprecated)
+Use preserveAsyncSeries instead
+
+##### Preserve async series
 Respect the dispatch order with async middleware
 ```js
   const { preserveAsyncFlow } = require('redux-fun');
