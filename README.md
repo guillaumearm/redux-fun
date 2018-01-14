@@ -49,7 +49,7 @@ const updater_2 = withDefaultState({})(action => state => state);
 ```js
   const { composeMiddlewares, pipeMiddlewares } = require('redux-fun');
 
-  const middleware_1 = composeMiddl(m3, m2, m1);
+  const middleware_1 = composeMiddlewares(m3, m2, m1);
   const middleware_2 = pipeMiddlewares(m1, m2, m3);
 ```
 
