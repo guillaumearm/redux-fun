@@ -1,6 +1,6 @@
 {
   "name": "redux-fun",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Redux functional programming utilities",
   "main": "./src/index.js",
   "scripts": {
