@@ -8,9 +8,10 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "commit": "git-cz",
     "test": "npm run lint",
-    "test:all": "npm run lint",
+    "test:all": "npm run test",
     "lint": "eslint .",
-    "prepublish": "npm run test",
+    "preversion": "npm run test:all",
+    "prepublish": "npm run test:all",
     "precommit": "lint-staged",
     "lint-staged": "lint-staged"
   },
