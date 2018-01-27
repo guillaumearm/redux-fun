@@ -5,6 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "clean": "rimraf ./coverage",
+    "commit": "git-cz",
     "test": "npm run lint",
     "test:all": "npm run lint",
     "lint": "eslint .",
@@ -31,6 +32,8 @@
   "license": "MIT",
   "homepage": "https://github.com/guillaumearm/redux-fun",
   "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.12.1",
     "eslint-plugin-node": "^5.2.1",
     "husky": "^0.14.3",
@@ -44,5 +47,10 @@
   },
   "engines": {
     "node": ">=8.9.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
