@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "preversion": "npm run test:all",
-    "prepublish": "npm run test:all",
+    "prepublishOnly": "npm run test:all",
     "precommit": "lint-staged",
     "lint-staged": "lint-staged"
   },
