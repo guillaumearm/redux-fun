@@ -38,7 +38,7 @@
     "reducer",
     "updater"
   ],
-  "author": "Guillaume ARM",
+  "author": "Guillaume ARM <trapcodien@hotmail.fr> (https://github.com/guillaumearm/)",
   "license": "MIT",
   "homepage": "https://github.com/guillaumearm/redux-fun",
   "devDependencies": {
