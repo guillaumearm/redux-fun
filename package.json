@@ -28,9 +28,12 @@
   },
   "keywords": [
     "redux",
+    "functional-programming",
     "fp",
-    "functional",
-    "programming"
+    "middleware",
+    "selector",
+    "reducer",
+    "updater"
   ],
   "author": "Guillaume ARM",
   "license": "MIT",
