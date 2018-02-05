@@ -81,3 +81,22 @@ Respect the dispatch order with async middleware
   const boundSelectors = bindSelectors(selectors, store.getState);
   const user = boundSelectors.getUser({ id: 1 });
 ```
+
+##### getOwnProp
+
+`getOwnProp` is very useful to use with createSelector from [reselect](https://github.com/reactjs/reselect)
+
+```js
+const { createSelector } = require('reselect');
+const { getOwnProp } = require('redux-fun');
+
+const getUsers = (state = {}) => state.users || {}
+
+const getUserByName = createSelector(
+  getUsers,
+  getOwnProp(name),
+  (users, name) => users[name]
+)
+
+getUserByName({ users: { user1: true } }, { name: 'user1' }); // => true
+```
