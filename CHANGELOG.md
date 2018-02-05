@@ -1,3 +1,13 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/guillaumearm/redux-fun/compare/v1.1.6...v1.2.0) (2018-02-05)
+
+
+### Features
+
+* **selectors:** add getOwnProp ([a680504](https://github.com/guillaumearm/redux-fun/commit/a680504))
+
+
+
 <a name="1.1.6"></a>
 ## [1.1.6](https://github.com/guillaumearm/redux-fun/compare/v1.1.5...v1.1.6) (2018-02-04)
 
