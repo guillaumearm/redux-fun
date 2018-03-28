@@ -94,9 +94,9 @@ const getUsers = (state = {}) => state.users || {}
 
 const getUserByName = createSelector(
   getUsers,
-  getOwnProp(name),
-  (users, name) => users[name]
+  getOwnProp('fullName'),
+  (users, fullName) => users[fullName]
 )
 
-getUserByName({ users: { user1: true } }, { name: 'user1' }); // => true
+getUserByName({ users: { user1: true } }, { fullName: 'user1' }); // => true
 ```
