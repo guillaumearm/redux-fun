@@ -1,3 +1,13 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/guillaumearm/redux-fun/compare/v1.2.1...v1.3.0) (2018-03-29)
+
+
+### Features
+
+* handle-io redux support ([fc3ae46](https://github.com/guillaumearm/redux-fun/commit/fc3ae46))
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/guillaumearm/redux-fun/compare/v1.2.0...v1.2.1) (2018-03-28)
 
