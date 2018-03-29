@@ -7,7 +7,9 @@
     "clean": "rimraf ./coverage",
     "bump": "conventional-bump -p angular",
     "cz": "git-cz",
-    "test": "echo no tests yet",
+    "test": "NODE_ENV=test jest --verbose",
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "npm run test -- --coverage",
     "test:all": "npm run lint && npm run test",
     "lint": "eslint .",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
@@ -41,12 +43,13 @@
     "conventional-bump": "=1.0.4",
     "cz-conventional-changelog": "=2.1.0",
     "eslint": "=4.19.1",
+    "eslint-plugin-jest": "^21.15.0",
     "eslint-plugin-node": "=6.0.1",
     "jest": "=22.4.3",
     "rimraf": "=2.6.2"
   },
   "dependencies": {
-    "handle-io": "=0.5.0",
+    "handle-io": "^0.5.1",
     "lodash.curry": "=4.1.1",
     "lodash.mapvalues": "=4.6.0"
   },
