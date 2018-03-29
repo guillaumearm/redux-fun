@@ -67,7 +67,7 @@ Respect the dispatch order with async middleware
 ----------------------
 
 ### Handlers
-A [Handler](https://github.com/guillaumearm/handle-io/#handlers) from the [handle-io](https://github.com/guillaumearm/handle-io) library can be tranformed into redux middleware using [createHandleIOMiddleware](https://github.com/guillaumearm/handle-io/#createhandleiomiddleware) function.
+A [Handler](https://github.com/guillaumearm/handle-io/#handlers) from the [handle-io](https://github.com/guillaumearm/handle-io) library can be tranformed into redux middleware using [createHandleIOMiddleware](https://github.com/guillaumearm/redux-fun#createhandleiomiddleware) function.
 
 #### Redux Handlers
 
