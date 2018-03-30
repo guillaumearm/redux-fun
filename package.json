@@ -65,7 +65,7 @@
     "rollup-plugin-node-resolve": "^3.3.0"
   },
   "dependencies": {
-    "handle-io": "=0.5.2",
+    "handle-io": "0.5.3",
     "lodash.curry": "=4.1.1",
     "lodash.mapvalues": "=4.6.0"
   },
