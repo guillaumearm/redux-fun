@@ -67,20 +67,20 @@ jobs:
       # run test
       - run: npm run test:all
 
-  # release:
-  #   docker:
-  #     - image: circleci/node:9
-  #   filters:
-  #     branches:
-  #       ignore: gh-pages
-  #   steps:
-  #     - checkout
-  #     - restore-cache:
-  #         keys:
-  #           - handle-io-dependencies-{{ checksum "package-lock.json" }}
-  #
-  #     # run semantic-release
-  #     - run: npx semantic-release
+  release:
+    docker:
+      - image: circleci/node:9
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - restore-cache:
+          keys:
+            - handle-io-dependencies-{{ checksum "package-lock.json" }}
+
+      # run semantic-release
+      - run: npx semantic-release
 
   code_coverage:
     docker:
@@ -116,3 +116,6 @@ workflows:
           requires:
             - test_all
             - code_coverage
+      - release:
+          requires:
+            - build
