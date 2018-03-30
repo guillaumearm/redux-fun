@@ -1,6 +1,11 @@
 redux-fun
 ===============
+[![npm](https://img.shields.io/npm/v/redux-fun.svg)](https://www.npmjs.com/package/redux-fun)
+[![dependencies Status](https://david-dm.org/guillaumearm/redux-fun/status.svg)](https://david-dm.org/guillaumearm/redux-fun)
+[![devDependencies Status](https://david-dm.org/guillaumearm/redux-fun/dev-status.svg)](https://david-dm.org/guillaumearm/redux-fun?type=dev)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/guillaumearm/redux-fun/blob/master/CONTRIBUTING.md)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Join the chat at https://gitter.im/redux-fun/Lobby](https://badges.gitter.im/redux-fun/Lobby.svg)](https://gitter.im/redux-fun/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Redux functional programming utilities
 
