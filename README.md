@@ -1,10 +1,10 @@
 redux-fun
 ===============
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/guillaumearm/redux-fun.svg)](https://greenkeeper.io/)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/guillaumearm/redux-fun/master.svg)](https://circleci.com/gh/guillaumearm/redux-fun)
 [![codecov](https://codecov.io/gh/guillaumearm/redux-fun/branch/master/graph/badge.svg)](https://codecov.io/gh/guillaumearm/redux-fun)
 [![npm](https://img.shields.io/npm/v/redux-fun.svg)](https://www.npmjs.com/package/redux-fun)
+[![Greenkeeper badge](https://badges.greenkeeper.io/guillaumearm/redux-fun.svg)](https://greenkeeper.io/)
 [![NSP Status](https://nodesecurity.io/orgs/trapcodien/projects/b0aa847e-a5c4-4758-9aab-d4e23d15d3d1/badge)](https://nodesecurity.io/orgs/trapcodien/projects/b0aa847e-a5c4-4758-9aab-d4e23d15d3d1)
 [![dependencies Status](https://david-dm.org/guillaumearm/redux-fun/status.svg)](https://david-dm.org/guillaumearm/redux-fun)
 [![devDependencies Status](https://david-dm.org/guillaumearm/redux-fun/dev-status.svg)](https://david-dm.org/guillaumearm/redux-fun?type=dev)
