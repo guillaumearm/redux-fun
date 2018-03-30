@@ -1,3 +1,11 @@
+<a name="1.3.2"></a>
+## [1.3.2](https://github.com/guillaumearm/redux-fun/compare/v1.3.1...v1.3.2) (2018-03-30)
+
+
+### Bug Fixes
+
+* **package:** update handle-io to version 0.5.3 🚀 ([#23](https://github.com/guillaumearm/redux-fun/issues/23)) ([c1a7273](https://github.com/guillaumearm/redux-fun/commit/c1a7273))
+
 <a name="1.3.1"></a>
 ## [1.3.1](https://github.com/guillaumearm/redux-fun/compare/v1.3.0...v1.3.1) (2018-03-29)
 
@@ -100,6 +108,3 @@
 
 <a name="0.1.0"></a>
 # 0.1.0 (2017-12-30)
-
-
-
