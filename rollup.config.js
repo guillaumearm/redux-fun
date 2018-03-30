@@ -1,6 +1,6 @@
 // rollup.config.js
-const commonjs = require('rollup-plugin-commonjs');
-const nodeResolve = require('rollup-plugin-node-resolve');
+import commonjs from 'rollup-plugin-commonjs';
+import nodeResolve from 'rollup-plugin-node-resolve';
 
 const outputs = [
   { format: 'cjs', outputFolder: 'lib' },
@@ -24,7 +24,7 @@ module.exports = outputs.map(({ format, outputFolder }) => ({
 
     commonjs({
       include: 'node_modules/**',
-      extensions: [ '.js' ],
+      extensions: ['.js'],
     })
   ]
 }))

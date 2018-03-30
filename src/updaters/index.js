@@ -1,3 +1,1 @@
-module.exports = {
-  withDefaultState: require('./withDefaultState'),
-}
+export { default as withDefaultState } from './withDefaultState';

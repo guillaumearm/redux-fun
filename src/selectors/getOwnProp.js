@@ -1,1 +1,1 @@
-module.exports = (propName) => (state, ownProps = {}) => ownProps[propName];
+export default (propName) => (state, ownProps = {}) => ownProps[propName];

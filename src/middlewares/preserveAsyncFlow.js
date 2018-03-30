@@ -1,6 +1,6 @@
-const preserveAsyncSeries = require('./preserveAsyncSeries');
+import preserveAsyncSeries from './preserveAsyncSeries';
 
-module.exports = (actionTypes) => {
+export default (actionTypes) => {
   // eslint-disable-next-line no-console
   console.warn('redux-fun : preserveAsyncFlow is deprecated, use preserveAsyncSeries instead');
   return preserveAsyncSeries(actionTypes)

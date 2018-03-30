@@ -1,7 +1,5 @@
-module.exports = {
-  ...require('./reducers'),
-  ...require('./updaters'),
-  ...require('./middlewares'),
-  ...require('./handlers'),
-  ...require('./selectors'),
-};
+export * from './reducers';
+export * from './updaters';
+export * from './middlewares';
+export * from './handlers';
+export * from './selectors';

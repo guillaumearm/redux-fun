@@ -1,1 +1,3 @@
-module.exports = (...middlewares) => require('./pipeMiddlewares')(...middlewares.reverse())
+import pipeMiddlewares from './pipeMiddlewares';
+
+export default (...middlewares) => pipeMiddlewares(...middlewares.reverse())

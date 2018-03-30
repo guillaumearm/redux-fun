@@ -1,1 +1,3 @@
-module.exports = (...reducers) => require('./pipeReducers')(...reducers.reverse())
+import pipeReducers from './pipeReducers';
+
+export default (...reducers) => pipeReducers(...reducers.reverse())

@@ -8,4 +8,4 @@ const pipeReducers = (reducer, ...restReducers) => (state, action) => {
   return pipeReducers(...restReducers)(reducer(state, action), action)
 }
 
-module.exports = pipeReducers
+export default pipeReducers

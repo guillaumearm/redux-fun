@@ -1,5 +1,5 @@
-const curry = require('lodash.curry')
+import curry from 'lodash.curry';
 
-module.exports = curry((defaultState, updater) => (
+export default curry((defaultState, updater) => (
   (action) => (state = defaultState) => updater(action)(state)
 ))

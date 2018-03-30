@@ -1,6 +1,6 @@
-const mapValues = require('lodash.mapvalues');
+import mapValues from 'lodash.mapvalues';
 
-module.exports = (selectors, getState) => (
+export default (selectors, getState) => (
   mapValues(selectors, (selector) => (
     (...args) => selector(getState(), ...args)
   ))

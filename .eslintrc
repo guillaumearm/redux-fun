@@ -4,18 +4,23 @@
     "node": true,
   },
   "parserOptions": {
+    "sourceType": "module",
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
     },
   },
   "plugins": [
-    "node"
+    "node",
+    "import"
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:node/recommended"
+    "plugin:node/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
   ],
   "rules": {
+    "node/no-unsupported-features": 0,
     "no-multi-spaces": ["error"],
     "node/exports-style": ["error", "module.exports"]
   }
