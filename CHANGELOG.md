@@ -1,3 +1,11 @@
+<a name="1.3.3"></a>
+## [1.3.3](https://github.com/guillaumearm/redux-fun/compare/v1.3.2...v1.3.3) (2018-03-30)
+
+
+### Bug Fixes
+
+* **build:** commonjs, es and umd bundles ([#25](https://github.com/guillaumearm/redux-fun/issues/25)) ([dd3fb9d](https://github.com/guillaumearm/redux-fun/commit/dd3fb9d))
+
 <a name="1.3.2"></a>
 ## :x: 1.3.2 (2018-03-30)
 
