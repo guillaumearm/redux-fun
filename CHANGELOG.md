@@ -1,3 +1,6 @@
+<a name="1.3.5"></a>
+## [1.3.5](https://github.com/guillaumearm/redux-fun/compare/v1.3.4...v1.3.5) (2018-03-30)
+
 <a name="1.3.4"></a>
 ## [1.3.4](https://github.com/guillaumearm/redux-fun/compare/v1.3.3...v1.3.4) (2018-03-30)
 
