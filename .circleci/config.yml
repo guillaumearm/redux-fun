@@ -18,11 +18,11 @@ jobs:
       - run: npm ci || npm install
 
       # update lockfile
-      # - run: npx greenkeeper-lockfile-update
-      # - run: npm install
+      - run: npx greenkeeper-lockfile-update
+      - run: npm install
 
       # upload lockfile
-      # - run: npx greenkeeper-lockfile-upload
+      - run: npx greenkeeper-lockfile-upload
 
       - save_cache:
           paths:
