@@ -49,7 +49,10 @@
   "license": "MIT",
   "homepage": "https://github.com/guillaumearm/redux-fun#readme",
   "devDependencies": {
-    "codecov": "^3.0.0",
+    "@semantic-release/changelog": "=2.0.1",
+    "@semantic-release/exec": "=2.2.3",
+    "@semantic-release/git": "=4.0.1",
+    "codecov": "=3.0.0",
     "commitizen": "=2.9.6",
     "conventional-bump": "=1.0.4",
     "conventional-changelog-cli": "=1.3.21",
@@ -60,14 +63,78 @@
     "greenkeeper-lockfile": "=1.14.0",
     "jest": "=22.4.3",
     "rimraf": "=2.6.2",
-    "rollup": "^0.57.1",
-    "rollup-plugin-commonjs": "^9.1.0",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "rollup": "=0.57.1",
+    "rollup-plugin-commonjs": "=9.1.0",
+    "rollup-plugin-node-resolve": "=3.3.0",
+    "semantic-release": "=15.1.4"
   },
   "dependencies": {
-    "handle-io": "0.5.3",
+    "handle-io": "=0.5.3",
     "lodash.curry": "=4.1.1",
     "lodash.mapvalues": "=4.6.0"
+  },
+  "release": {
+    "branch": "master",
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "npm run test:all"
+      }
+    ],
+    "analyzeCommits": {
+      "preset": "angular",
+      "releaseRules": [
+        {
+          "type": "docs",
+          "release": "patch"
+        },
+        {
+          "type": "chore",
+          "scope": "release",
+          "release": "patch"
+        },
+        {
+          "type": "ci",
+          "scope": "release",
+          "release": "patch"
+        }
+      ]
+    },
+    "prepare": [
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "npm run build"
+      },
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "publish": [
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/github",
+        "assets": [
+          {
+            "name": "redux-fun.js",
+            "path": "lib/redux-fun.js",
+            "label": "redux-fun (commonJS distribution)"
+          },
+          {
+            "name": "redux-fun.es.js",
+            "path": "es/redux-fun.js",
+            "label": "redux-fun (ES distribution)"
+          },
+          {
+            "name": "redux-fun.umd.js",
+            "path": "dist/redux-fun.js",
+            "label": "redux-fun (UMD distribution)"
+          }
+        ]
+      }
+    ]
   },
   "engines": {
     "node": ">=8.9.0"
