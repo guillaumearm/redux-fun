@@ -1,5 +1,4 @@
-redux-fun
-===============
+# redux-fun :wrench:
 
 [![CircleCI branch](https://img.shields.io/circleci/project/github/guillaumearm/redux-fun/master.svg)](https://circleci.com/gh/guillaumearm/redux-fun)
 [![codecov](https://codecov.io/gh/guillaumearm/redux-fun/branch/master/graph/badge.svg)](https://codecov.io/gh/guillaumearm/redux-fun)
