@@ -1,5 +1,5 @@
 <a name="1.3.2"></a>
-## [1.3.2](https://github.com/guillaumearm/redux-fun/compare/v1.3.1...v1.3.2) (2018-03-30)
+## :x: 1.3.2 (2018-03-30)
 
 
 ### Bug Fixes

@@ -1,4 +1,4 @@
-const { io, createTestHandler } = require('handle-io')
+import { io, createTestHandler } from 'handle-io';
 
 const dispatch = io(() => {});
 const next = io(() => {});
@@ -51,4 +51,4 @@ const createTestReduxHandler = (h, action, mockedIOs = [], expectedRetValue, ass
 
 const testReduxHandler = (h, action) => createTestReduxHandler(h, action)
 
-module.exports = testReduxHandler;
+export default testReduxHandler;

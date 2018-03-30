@@ -13,4 +13,4 @@ const pipeMiddlewares = (...middlewares) => {
   return pipeMiddlewares(simpleComposeMiddlewares(m2, m1), ...rest);
 };
 
-module.exports = pipeMiddlewares
+export default pipeMiddlewares

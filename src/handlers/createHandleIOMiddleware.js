@@ -1,5 +1,5 @@
-const { io } = require('handle-io');
-const { pipeMiddlewares } = require('..');
+import { io } from 'handle-io';
+import pipeMiddlewares from '../middlewares/pipeMiddlewares';
 
 
 const convertHandlerToMiddleware = h => ({ dispatch, getState }) => next => {
@@ -16,4 +16,4 @@ const createHandleIOMiddleware = (...handlers) => {
   return pipeMiddlewares(...middlewares);
 };
 
-module.exports = createHandleIOMiddleware;
+export default createHandleIOMiddleware;

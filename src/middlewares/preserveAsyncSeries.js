@@ -1,4 +1,4 @@
-module.exports = (actionType = []) => () => (next) => {
+export default (actionType = []) => () => (next) => {
   const actionsTypes = typeof actionType === 'string' ? [actionType] : actionType;
   const queue = [];
   let dispatching = false;
