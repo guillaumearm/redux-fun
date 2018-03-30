@@ -1,5 +1,5 @@
 const { io, handler } = require('handle-io');
-const { testReduxHandler } = require('../..')
+const { testReduxHandler } = require('../../src')
 
 describe('redux-fun:handlers/testReduxHandler', () => {
   describe('readme examples', () => {
