@@ -1,0 +1,115 @@
+# redux-fun circleci configuration file
+
+version: 2
+jobs:
+  install:
+    docker:
+      - image: circleci/node:9
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+
+      # install latest npm version
+      - run: sudo npm install -g npm@latest
+
+      # install
+      - run: npm ci || npm install
+
+      # update lockfile
+      # - run: npx greenkeeper-lockfile-update
+      # - run: npm install
+
+      # upload lockfile
+      # - run: npx greenkeeper-lockfile-upload
+
+      - save_cache:
+          paths:
+            - node_modules
+            - package-lock.json
+          key: handle-io-dependencies-{{ checksum "package-lock.json" }}
+
+  build:
+    docker:
+      - image: circleci/node:9
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - restore-cache:
+          keys:
+            - handle-io-dependencies-{{ checksum "package-lock.json" }}
+
+      # run build
+      - run: npm run build
+
+      - store_artifacts:
+          path: ./dist
+      - store_artifacts:
+          path: ./lib
+      - store_artifacts:
+          path: ./es
+
+  test_all:
+    docker:
+      - image: circleci/node:9
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - restore-cache:
+          keys:
+            - handle-io-dependencies-{{ checksum "package-lock.json" }}
+
+      # run test
+      - run: npm run test:all
+
+  # release:
+  #   docker:
+  #     - image: circleci/node:9
+  #   filters:
+  #     branches:
+  #       ignore: gh-pages
+  #   steps:
+  #     - checkout
+  #     - restore-cache:
+  #         keys:
+  #           - handle-io-dependencies-{{ checksum "package-lock.json" }}
+  #
+  #     # run semantic-release
+  #     - run: npx semantic-release
+
+  # code_coverage:
+  #   docker:
+  #     - image: circleci/node:9
+  #   filters:
+  #     branches:
+  #       ignore: gh-pages
+  #   steps:
+  #     - checkout
+  #     - restore-cache:
+  #         keys:
+  #           - handle-io-dependencies-{{ checksum "package-lock.json" }}
+  #
+  #     # run test:coverage
+  #     - run: npm run test:coverage
+  #
+  #     # run codecov
+  #     - run: npx codecov
+
+
+workflows:
+  version: 2
+  build_test:
+    jobs:
+      - install
+      - test_all:
+          requires:
+            - install
+
+      - build:
+          requires:
+            - test_all
