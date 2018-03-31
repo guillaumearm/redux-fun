@@ -1,9 +1,10 @@
 {
+  "ignore": [
+    "node_modules/**"
+  ],
+  "plugins": ["transform-object-rest-spread"],
   "env": {
     "test": {
-      "ignore": [
-        "node_modules/**"
-      ],
       "presets": [
         ["es2015"]
       ]

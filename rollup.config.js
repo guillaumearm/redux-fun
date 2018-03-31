@@ -1,6 +1,7 @@
 // rollup.config.js
 import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
+import babel from 'rollup-plugin-babel';
 
 const outputs = [
   { format: 'cjs', outputFolder: 'lib' },
@@ -20,6 +21,10 @@ module.exports = outputs.map(({ format, outputFolder }) => ({
       main: true,
       module: true,
       jsnext: true,
+    }),
+
+    babel({
+      exclude: 'node_modules/**',
     }),
 
     commonjs({
