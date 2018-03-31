@@ -1,6 +1,6 @@
 {
   "name": "redux-fun",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "description": "Redux functional programming utilities",
   "main": "lib/redux-fun.js",
   "module": "es/redux-fun.js",

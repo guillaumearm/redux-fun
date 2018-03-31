@@ -1,3 +1,11 @@
+<a name="1.3.6"></a>
+## [1.3.6](https://github.com/guillaumearm/redux-fun/compare/v1.3.5...v1.3.6) (2018-03-31)
+
+
+### Bug Fixes
+
+* **build:** transform object spread ([#28](https://github.com/guillaumearm/redux-fun/issues/28)) ([fc041d9](https://github.com/guillaumearm/redux-fun/commit/fc041d9)), closes [#27](https://github.com/guillaumearm/redux-fun/issues/27)
+
 <a name="1.3.5"></a>
 ## [1.3.5](https://github.com/guillaumearm/redux-fun/compare/v1.3.4...v1.3.5) (2018-03-30)
 
