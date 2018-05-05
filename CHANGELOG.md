@@ -1,3 +1,11 @@
+<a name="1.3.7"></a>
+## [1.3.7](https://github.com/guillaumearm/redux-fun/compare/v1.3.6...v1.3.7) (2018-05-05)
+
+
+### Bug Fixes
+
+* **build:** add missing transform-async-to-generator ([#51](https://github.com/guillaumearm/redux-fun/issues/51)) ([0cce7b4](https://github.com/guillaumearm/redux-fun/commit/0cce7b4))
+
 <a name="1.3.6"></a>
 ## [1.3.6](https://github.com/guillaumearm/redux-fun/compare/v1.3.5...v1.3.6) (2018-03-31)
 
