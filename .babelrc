@@ -2,12 +2,16 @@
   "ignore": [
     "node_modules/**"
   ],
-  "plugins": ["transform-object-rest-spread"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-async-to-generator"
+  ],
   "env": {
+    "cjs": {
+      "presets": ["es2015"]
+    },
     "test": {
-      "presets": [
-        ["es2015"]
-      ]
+      "presets": ["es2015"]
     }
   }
 }
