@@ -18,11 +18,18 @@ jobs:
       - run: npm ci || npm install
 
       # update lockfile
-      - run: npx greenkeeper-lockfile-update
+      - run:
+          command: npx greenkeeper-lockfile-update
+          environment:
+            GK_LOCK_COMMIT_AMEND: true
+
       - run: npm install
 
       # upload lockfile
-      - run: npx greenkeeper-lockfile-upload
+      - run:
+          command: npx greenkeeper-lockfile-upload
+          environment:
+            GK_LOCK_COMMIT_AMEND: true
 
       - save_cache:
           paths:
