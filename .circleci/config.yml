@@ -2,41 +2,6 @@
 
 version: 2
 jobs:
-  install:
-    docker:
-      - image: circleci/node:9
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-
-      # install latest npm version
-      - run: sudo npm install -g npm@latest
-
-      # install
-      - run: npm ci || npm install
-
-      # update lockfile
-      - run:
-          command: npx greenkeeper-lockfile-update
-          environment:
-            GK_LOCK_COMMIT_AMEND: true
-
-      - run: npm install
-
-      # upload lockfile
-      - run:
-          command: npx greenkeeper-lockfile-upload
-          environment:
-            GK_LOCK_COMMIT_AMEND: true
-
-      - save_cache:
-          paths:
-            - node_modules
-            - package-lock.json
-          key: handle-io-dependencies-{{ checksum "package-lock.json" }}
-
   build:
     docker:
       - image: circleci/node:9
@@ -47,10 +12,45 @@ jobs:
       - checkout
       - restore-cache:
           keys:
-            - handle-io-dependencies-{{ checksum "package-lock.json" }}
+            - redux-fun-dependencies-{{ checksum "package.json" }}
 
-      # run build
+      # install latest npm version
+      - run: sudo npm install -g npm@latest
+
+      # install greenkeeper-lockfile
+      - run: sudo npm install -g greenkeeper-lockfile@latest
+
+      # update lockfile
+      - run:
+          command: npx greenkeeper-lockfile-update
+          environment:
+            GK_LOCK_COMMIT_AMEND: true
+
+      # install
+      - run: npm install
+
+      - save_cache:
+         paths:
+            - node_modules
+         key: redux-fun-dependencies-{{ checksum "package.json" }}
+
+      # build
       - run: npm run build
+
+      # test
+      - run: npm run test:all
+
+      # run test:coverage
+      - run: npm run test:coverage
+
+      # run codecov
+      - run: npx codecov
+
+      # upload lockfile
+      - run:
+          command: npx greenkeeper-lockfile-upload
+          environment:
+            GK_LOCK_COMMIT_AMEND: true
 
       - store_artifacts:
           path: ./dist
@@ -58,21 +58,6 @@ jobs:
           path: ./lib
       - store_artifacts:
           path: ./es
-
-  test_all:
-    docker:
-      - image: circleci/node:9
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-      - restore-cache:
-          keys:
-            - handle-io-dependencies-{{ checksum "package-lock.json" }}
-
-      # run test
-      - run: npm run test:all
 
   release:
     docker:
@@ -84,45 +69,17 @@ jobs:
       - checkout
       - restore-cache:
           keys:
-            - handle-io-dependencies-{{ checksum "package-lock.json" }}
+            - redux-fun-dependencies-{{ checksum "package.json" }}
 
       # run semantic-release
       - run: npx semantic-release
 
-  code_coverage:
-    docker:
-      - image: circleci/node:9
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-      - restore-cache:
-          keys:
-            - handle-io-dependencies-{{ checksum "package-lock.json" }}
-
-      # run test:coverage
-      - run: npm run test:coverage
-
-      # run codecov
-      - run: npx codecov
-
-
 workflows:
   version: 2
-  build_test:
+  build_release:
     jobs:
-      - install
-      - test_all:
-          requires:
-            - install
-      - code_coverage:
-          requires:
-            - install
-      - build:
-          requires:
-            - test_all
-            - code_coverage
+      - build
       - release:
           requires:
             - build
+
