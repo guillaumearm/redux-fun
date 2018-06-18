@@ -32,6 +32,7 @@ jobs:
       - save_cache:
          paths:
             - node_modules
+            - package-lock.json
          key: redux-fun-dependencies-{{ checksum "package.json" }}
 
       # build
