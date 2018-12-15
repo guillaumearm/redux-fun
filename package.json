@@ -50,7 +50,7 @@
   "homepage": "https://github.com/guillaumearm/redux-fun#readme",
   "devDependencies": {
     "@semantic-release/changelog": "=2.0.1",
-    "@semantic-release/exec": "=2.2.3",
+    "@semantic-release/exec": "3.3.1",
     "@semantic-release/git": "4.0.3",
     "babel-core": "=6.26.0",
     "babel-eslint": "=8.2.3",
