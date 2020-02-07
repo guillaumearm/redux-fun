@@ -58,7 +58,7 @@
     "babel-plugin-transform-async-to-generator": "=6.24.1",
     "babel-plugin-transform-object-rest-spread": "=6.26.0",
     "babel-preset-es2015": "=6.24.1",
-    "codecov": "3.0.1",
+    "codecov": "3.6.5",
     "commitizen": "2.10.1",
     "conventional-bump": "=1.0.4",
     "conventional-changelog-cli": "2.0.1",
