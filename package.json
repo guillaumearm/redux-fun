@@ -69,7 +69,7 @@
     "eslint-plugin-node": "=6.0.1",
     "greenkeeper-lockfile": "1.15.1",
     "jest": "=22.4.3",
-    "rimraf": "=2.6.2",
+    "rimraf": "3.0.2",
     "rollup": "0.60.7",
     "rollup-plugin-babel": "3.0.4",
     "rollup-plugin-commonjs": "9.1.3",
